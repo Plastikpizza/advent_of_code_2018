@@ -1,5 +1,6 @@
 module Dist where
 
+-- source: https://wiki.haskell.org/Edit_distance
 dist :: Eq a => [a] -> [a] -> Int
 dist a b = last (if lab == 0 then mainDiag
     else if lab > 0 then lowers !! (lab - 1)
