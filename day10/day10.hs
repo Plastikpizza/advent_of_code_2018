@@ -22,12 +22,12 @@ displayW :: World -> Picture
 displayW particles = pictures [translate (fromIntegral x) (fromIntegral (-y)) $ circle 1 | (Particle (x,y) _)<-particles] 
 
 handleKeys :: I.Event -> World -> World
-handleKeys (I.EventKey (I.Char 'k') I.Down _ _) world = trace (show $ head world) map (fly 100) world
+handleKeys (I.EventKey (I.Char 'k') I.Down _ _) world = trace (show $ head world) map (fly 250) world
 handleKeys (I.EventKey (I.Char 'j') I.Down _ _) world = trace (show $ head world) map (fly 50) world
 handleKeys (I.EventKey (I.Char 'h') I.Down _ _) world = trace (show $ head world) map (fly 1) world
 handleKeys (I.EventKey (I.Char 'g') I.Down _ _) world = trace (show $ head world) map (fly (-1)) world
 handleKeys (I.EventKey (I.Char 'f') I.Down _ _) world = trace (show $ head world) map (fly (-50)) world
-handleKeys (I.EventKey (I.Char 'd') I.Down _ _) world = trace (show $ head world) map (fly (-100)) world
+handleKeys (I.EventKey (I.Char 'd') I.Down _ _) world = trace (show $ head world) map (fly (-250)) world
 handleKeys (I.EventKey (I.MouseButton I.WheelDown) _ _ _) world = trace (show $ head world) map (fly 1) world
 handleKeys (I.EventKey (I.MouseButton I.WheelUp)   _ _ _) world = trace (show $ head world) map (fly (-1)) world
 handleKeys _ w = w
